@@ -1,0 +1,27 @@
+{
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    },
+    "publish": {
+      "registry": "https://npm.pkg.github.com/"
+    }
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "publish": {
+    "allowBranch": "master",
+    "commitHooks": true,
+    "conventionalCommits": true,
+    "independent": true,
+    "message": "chore: publish dls"
+  },
+  "run": {
+    "stream": true
+  },
+  "ignoreChanges": ["**/__fixtures__/**", "**/__tests__/**", "**/*.md"],
+  "useGitVersion": true,
+  "gitVersionPrefix": "v"
+}
