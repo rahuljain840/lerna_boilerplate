@@ -1,23 +1,21 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: path.resolve(__dirname, 'lib/bundle.jsx'),
+  entry: path.resolve(__dirname, 'src/bundle.jsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'trips3m-chatbot-blog.js',
+    filename: 'trips3m-packages-fe.js',
     publicPath: 'dist/',
-    library: 'ReactSimpleChatbot',
+    library: 'Trips3mPackagesFE',
     libraryTarget: 'umd',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
-    // new CleanWebpackPlugin(['dist']),
     new UglifyJsPlugin({
       cache: true,
       parallel: true,
@@ -31,11 +29,30 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        use: ['babel-loader'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: false,
+            presets: [
+              [
+                '@babel/env',
+                {
+                  targets: { browsers: ['last 2 versions', 'safari >= 7'] },
+                  modules: false,
+                  loose: false
+                }
+              ],
+              '@babel/react'
+            ],
+            plugins: [
+              '@babel/proposal-object-rest-spread',
+              'transform-class-properties',
+            ]
+          }
+        },
       },
       {
-        test: /\.scss?$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       }
     ],
