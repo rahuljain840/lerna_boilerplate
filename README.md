@@ -1,7 +1,7 @@
-# TT common packages
+# Common packages
 
 ## Introduction
-This repo stores the majority of the TT packages. It is organized as a monorepo with each individual integration packaged and deployed as their own modules.
+This repo stores the majority of the packages. It is organized as a monorepo with each individual integration packaged and deployed as their own modules.
 
 ## Getting Started
 To start, please ensure you have the following installed on your local machine:
