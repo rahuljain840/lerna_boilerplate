@@ -9,6 +9,22 @@ To start, please ensure you have the following installed on your local machine:
 - [node](https://nodejs.org/en/)
 - [lerna](https://lerna.js.org/)
 
+#### Installing Node.js
+
+- ##### Using NVM
+
+  - ###### Installing NVM 
+    
+    Refer to [Installing NVM](https://github.com/creationix/nvm#install-script)
+
+  - ###### Installing Node.js 12.18.0
+
+    ```bash
+      nvm install v12.18.0
+    ```
+
+#### Installing lerna.js
+
 install lerna globally using below command.
 ```bash
 npm install --global lerna
@@ -100,7 +116,7 @@ email: <your email>
 - Publish package to github packages (NPM)
 
 ```
-lerna publish --graph-type all --no-git-tag-version
+lerna publish --graph-type all --no-git-tag-version --force-publish=*
 ```
 
 > `--no-git-tag-version` is used if you dont want to push git tag and wants to bump version. 
