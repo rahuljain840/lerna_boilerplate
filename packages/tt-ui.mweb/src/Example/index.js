@@ -1,4 +1,16 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import styled from '@emotion/styled'
+
+import {CalendarIcon} from '@rahuljain840/icons';
+
+const Button = styled.button({
+  padding: '32px',
+  backgroundColor: 'yellow',
+  fontSize: '24px',
+  borderRadius: '4px',
+  color: 'black',
+  fontWeight: 'bold'
+});
 
 class Example extends Component {
   constructor(props) {
@@ -7,7 +19,10 @@ class Example extends Component {
 
   render() {
     return (
-      <div>Example</div>
+      <div>
+        <CalendarIcon height="25px" width="25px"/>
+        <Button>Example</Button>
+      </div>
     );
   }
 }

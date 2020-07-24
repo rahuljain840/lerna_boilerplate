@@ -9,7 +9,7 @@
     "directory": "packages/tt-ui.mweb"
   },
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:blog && yarn build:copy-files && yarn build:css",
+    "build": "yarn build:cjs && yarn build:esm && yarn build:es && yarn build:copy-files",
     "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --config-file ../../babel.config.js --extensions \".js\" ./src --out-dir ./dist --ignore \"**/*.test.js,**/*.d.ts\"",
     "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --config-file ../../babel.config.js --extensions \".js\" ./src --out-dir ./dist/esm --ignore \"**/*.test.js,**/*.d.ts\"",
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../babel.config.js --extensions \".js\" ./src --out-dir ./dist/es --ignore \"**/*.test.js,**/*.d.ts\"",
@@ -61,6 +61,8 @@
     "superagent": "3.5.2"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@rahuljain840/icons": "^0.0.1",
     "lodash": "4.17.15",
     "react-modal": "3.11.2"
