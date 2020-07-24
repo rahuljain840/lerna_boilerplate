@@ -1,6 +1,6 @@
 {
   "name": "@rahuljain840/ui.mweb",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "repository": {
@@ -63,7 +63,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@rahuljain840/icons": "^0.0.2",
+    "@rahuljain840/icons": "^0.0.3",
     "lodash": "4.17.15",
     "react-modal": "3.11.2"
   },
